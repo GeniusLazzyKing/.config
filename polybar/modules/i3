@@ -1,0 +1,20 @@
+[module/i3]
+type = internal/i3
+pin-workspaces = true
+show-urgent = true
+strip-wsnumbers = true
+index-sort = true
+enable-click = true
+enable-scroll = false
+wrapping-scroll = false
+reverse-scroll = false
+fuzzy-match = true
+format = <label-state>
+format-padding = 1
+label-focused = 
+label-focused-padding = 1
+label-urgent = 
+label-urgent-padding = 1
+label-unfocused = 
+label-unfocused-padding = 1
+
