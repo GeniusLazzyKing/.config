@@ -52,6 +52,7 @@ bindsym $mod+Shift+q kill
 # 程序启动器
 bindsym $mod+d exec --no-startup-id rofi -show run
 bindsym $mod+q exec --no-startup-id rofi -show window
+bindsym $mod+b exec --no-startup-id rofi-bluetooth
 # 改变焦点
 bindsym $mod+h focus left
 bindsym $mod+j focus down
