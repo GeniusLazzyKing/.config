@@ -6,10 +6,10 @@ default_floating_border pixel  1
 font pango:FiraCodeNerdFont 8
 # 类别                  边框    背景    文本    指示器    子窗口
 client.focused          #d5c4a1 #3c3836 #ffffff #3c3836   #d5c4a1
-client.focused_inactive #d5c4a1 #3c3836 #ffffff #3c3836   #d5c4a1
-client.unfocused        #d5c4a1 #3c3836 #888888 #d5c4a1   #3c3836
-client.urgent           #d5c4a1 #3c3836 #ffffff #d5c4a1   #d5c4a1
-client.placeholder      #d5c4a1 #3c3836 #ffffff #d5c4a1   #d5c4a1
+client.focused_inactive #d5c4a1 #3c3836 #ffffff #3c3836   #3c3836
+client.unfocused        #3c3836 #3c3836 #888888 #d5c4a1   #3c3836
+client.urgent           #3c3836 #3c3836 #ffffff #d5c4a1   #d5c5a1
+client.placeholder      #d5c4a1 #3c3836 #ffffff #d5c4a1   #d5c5a1
 client.background       #d5c4a1
 ########## 自启动 ##########
 # 壁纸
