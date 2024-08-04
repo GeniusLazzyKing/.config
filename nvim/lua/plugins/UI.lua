@@ -1,5 +1,30 @@
 return {
-
+-- 状态栏
+{
+  'nvim-lualine/lualine.nvim',
+  event = "VeryLazy",
+  opts = {
+    theme =  'auto',
+    }
+},
+-- 缓冲区
+{
+  "akinsho/bufferline.nvim",
+  opts = {
+    options = {
+        -- 使用 nvim 内置lsp
+        diagnostics = "nvim_lsp",
+        -- 左侧让出 nvim-tree 的位置
+        offsets = {{
+            filetype = "neo-tree",
+            text = "File Explorer",
+            highlight = "Directory",
+            text_align = "left"
+        }}
+    }
+  }
+},
+-- 导航页
 {
   "nvimdev/dashboard-nvim",
   lazy = false,
@@ -21,26 +46,22 @@ return {
     ⠄⠪⣂⠁⢕⠆⠄⠂⠄⠁⡀⠂⡀⠄⢈⠉⢍⢛⢛⢛⢋⢔⢕⢕⢕⣽⣿⣿⠠⠈
     ]]
 
-    logo = string.rep("\n", 8) .. logo .. "\n\n"
+    logo = string.rep("\n", 3) .. logo .. "\n\n"
 
     local opts = {
       theme = "doom",
       hide = {
-        -- this is taken care of by lualine
-        -- enabling this messes up the actual laststatus setting after loading a file
         statusline = false,
       },
       config = {
         header = vim.split(logo, "\n"),
         -- stylua: ignore
         center = {
-          { action = 'lua LazyVim.pick()()',                           desc = " Find File",       icon = " ", key = "f" },
           { action = "ene | startinsert",                              desc = " New File",        icon = " ", key = "n" },
-          { action = 'lua LazyVim.pick("oldfiles")()',                 desc = " Recent Files",    icon = " ", key = "r" },
-          { action = 'lua LazyVim.pick("live_grep")()',                desc = " Find Text",       icon = " ", key = "g" },
-          { action = 'lua LazyVim.pick.config_files()()',              desc = " Config",          icon = " ", key = "c" },
-          { action = 'lua require("persistence").load()',              desc = " Restore Session", icon = " ", key = "s" },
-          { action = "LazyExtras",                                     desc = " Lazy Extras",     icon = " ", key = "x" },
+          { action = 'Telescope find_files',                           desc = " Find File",       icon = " ", key = "f" },         
+          { action = 'Telescope live_grep',                            desc = " Find Text",       icon = " ", key = "g" },
+          { action = 'Telescope oldfiles',                             desc = " Recent Files",    icon = " ", key = "r" },
+          { action = 'edit ~/.config/nvim/init.lua',                   desc = " Config",          icon = " ", key = "c" },
           { action = "Lazy",                                           desc = " Lazy",            icon = "󰒲 ", key = "l" },
           { action = function() vim.api.nvim_input("<cmd>qa<cr>") end, desc = " Quit",            icon = " ", key = "q" },
         },
